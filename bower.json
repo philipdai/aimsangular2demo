@@ -1,0 +1,22 @@
+{
+  "name": "aimangular2demo",
+  "description": "An aim demo project for Gulp + Angular + Browserify + Babel",
+  "main": "",
+  "authors": [
+    "Philip Dai <smartielion@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/philipdai/aimsangular2demo",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-additions": "~0.3.1",
+    "bootstrap": "~3.3.6"
+  }
+}

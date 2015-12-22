@@ -88,9 +88,9 @@ gulp.task('build-dependencies', function () {
     .pipe(buffer())
     .pipe(rev())
     .pipe(sourcemaps.init({loadMaps: true}))
-        // Add transformation tasks to the pipeline here.
-        .pipe(uglify())
-        .on('error', gutil.log)
+    // Add transformation tasks to the pipeline here.
+    .pipe(uglify())
+    .on('error', gutil.log)
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('./dist/js/vendor'))
     .pipe(size());

@@ -10,7 +10,9 @@ export const mainInfoDirective = () => {
 }; 
 
 class MainInfoComponent {
-	constructor() {}
+	constructor() {
+		
+	}
 }
 
 export { MainInfoComponent };

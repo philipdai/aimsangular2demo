@@ -5,12 +5,20 @@ export const orgDemoDirective = () => {
 	return {
 		template: template,
 		controller: controller,
-		controllerAs: 'vm'
+		controllerAs: 'vm',
+		bindToController: true,
+    scope: {
+    	orgDemo: '='
+    }
 	};
 };
 
 class OrgDemoComponent {
-	constructor() {}
+	constructor() {
+		this.orgDemo = {
+			
+		}
+	}
 }
 
 export { OrgDemoComponent };

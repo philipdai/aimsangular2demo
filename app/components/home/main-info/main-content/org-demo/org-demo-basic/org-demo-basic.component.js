@@ -5,12 +5,26 @@ export const orgDemoBasicDirective = () => {
 	return {
 		template: template,
 		controller: controller,
-		controllerAs: 'vm'
+		controllerAs: 'vm',
+		bindToController: true,
+    scope: {
+    	orgDemoBasic: '=',
+    	disPtnTypes: '='
+    }
 	};
 };
 
 class OrgDemoBasicComponent {
-	constructor() {}
+	constructor() {
+		this.orgDemoBasic = {
+			"disPtnType": '',
+			"orgType": '',
+			"orgName": ''
+		}
+
+		this.disPtnTypes = ['Organization', 'School', 'Hospital'];
+		
+	}
 }
 
 export { OrgDemoBasicComponent };

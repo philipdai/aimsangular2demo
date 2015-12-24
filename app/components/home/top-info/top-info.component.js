@@ -5,14 +5,21 @@ export const topInfoDirective = () => {
   return {
     template: template,
     controller: controller,
-    controllerAs: 'vm'
+    controllerAs: 'vm',
+    bindToController: true,
+    scope: {
+    	user: '='
+    }
   };
 };
 
 class TopInfoComponent {
   constructor() {
-    this.userId = 'NWIE04973';
-    this.date = '12/25/2015';
+  	this.user = {
+  		'userId': 'NWIE04973',
+  		'date': '12/25/2015'
+  	};
+
   }
 }
 

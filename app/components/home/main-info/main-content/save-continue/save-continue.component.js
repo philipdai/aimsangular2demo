@@ -1,4 +1,4 @@
-import template from './org-demo.html';
+import template from './save-continue.html';
 import { SaveContinueComponent as controller } from './save-continue.component';
 
 export const saveContinueDirective = () => {

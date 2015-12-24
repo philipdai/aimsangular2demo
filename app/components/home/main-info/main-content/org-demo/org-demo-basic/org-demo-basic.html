@@ -9,11 +9,13 @@
 
 </div>
 <div class="row">
-	<div class="col-md-4">
+	<div class="col-md-4 form-group">
 		<span>
 			<label for="dis-ptn-type">Distribution Partner Type*</label>
-			<select id="dis-ptn-type" name="dis-ptn-type">
-				<option value="organization">Organization</option>
+			
+			<select id="dis-ptn-type form-control" name="dis-ptn-type" required>
+				<option ng-repeat="p in vm.disPtnTypes" value="p" [(ngModel)]="disPtnType">{{ p }}</option>
+				<!-- <option *ngFor="#p of vm.disPtnTypes" [value]="p">{{p}}</option>        This doesn't work. Don't know why.-->
 			</select>
 		</span>
 	</div>

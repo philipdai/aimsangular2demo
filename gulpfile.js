@@ -35,6 +35,8 @@ var uglify = require('gulp-uglify');
 var useref = require('gulp-useref');
 var watchify = require('watchify');
 var zip = require('gulp-zip');
+var gls = require('gulp-live-server');
+
 
 // Helpers:
 
@@ -73,14 +75,22 @@ function bundleScripts(devMode) {
 
 // Tasks:
 
+
+// Backend mockup server
+gulp.task('server', function() {
+  var server = gls.new('server.js', undefined, false);
+  server.start();
+});
+
 gulp.task('build-dependencies', function () {
   // set up the browserify instance on a task basis
   var b = browserify({
     debug: true
   });
 
-  b.require('angular');
-  b.require('angular-ui-router');
+  // b.require('angular');
+  // b.require('angular-ui-router');
+  b.require('angular2/bundles/angular2');
   b.require('lodash');
 
   return b.bundle()
@@ -172,7 +182,7 @@ gulp.task('sass', function() {
     .pipe(gulp.dest('dist/styles'));
 });
 
-gulp.task('serve', function(cb) {
+gulp.task('serve', ['server'], function(cb) {
   runSequence('clean', ['build-dependencies', 'scripts', 'ng-templates'], 'html', 'watch', 'browser-sync', cb);
 });
 

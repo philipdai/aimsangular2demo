@@ -46,6 +46,11 @@ body {
 }
 
 /* Left Menu */
+.left-info {
+	padding-left: 0;
+	padding-right: 30px;
+}
+
 .left-info .operation {
 	font-weight: 700;
 	font-size: 2em;
@@ -77,6 +82,10 @@ body {
 .left-info .operation a.selected {
 	text-decoration: underline;
 	color: black;
+}
+
+.left-info .operation div {
+	padding-left: 0;
 }
 
 .menus {
@@ -129,6 +138,10 @@ body {
 /* main-content */
 #my-aim .main-info .main-content {
 	position: relative;
+}
+
+.main-content {
+	border-left: solid 2px #DCDCDC;
 }
 
 .main-content h1{
@@ -200,11 +213,17 @@ body {
 	font-size: 1.5em;
 }
 
+.main-content .btn{
+	white-space:normal !important;
+  max-width:200px;
+	background-color: gainsboro;
+	color: black;
+}
+
 /* org-demo */
 .org-demo active{
 	position: absolute;
 	width: 100%;
-	border-left: solid 2px #DCDCDC;
 	padding-left: 15px;
 	right: 0;
 }
@@ -227,13 +246,6 @@ body {
 }
 
 .org-demo a {
-	color: black;
-}
-
-.org-demo .btn{
-	white-space:normal !important;
-  max-width:200px;
-	background-color: gainsboro;
 	color: black;
 }
 

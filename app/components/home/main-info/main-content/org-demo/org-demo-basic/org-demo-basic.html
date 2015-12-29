@@ -13,9 +13,8 @@
 		<span>
 			<label for="dis-ptn-type">Distribution Partner Type*</label>
 			
-			<select id="dis-ptn-type form-control" name="dis-ptn-type" required>
-				<option ng-repeat="p in vm.disPtnTypes" value="p" [(ngModel)]="disPtnType">{{ p }}</option>
-				<!-- <option *ngFor="#p of vm.disPtnTypes" [value]="p">{{p}}</option>        This doesn't work. Don't know why.-->
+			<select id="dis-ptn-type form-control" name="dis-ptn-type" required ng-model="vm.orgDemoBasic.disPtnType">
+				<option ng-repeat="p in vm.disPtnTypes">{{ p }}</option>
 			</select>
 		</span>
 	</div>
@@ -23,8 +22,8 @@
 	<div class="col-md-3">
 		<span>
 				<label for="org-type">Organization Type*</label>
-				<select id="org-type" name="org-type">
-					<option value="bga">BGA</option>
+				<select id="org-type" name="org-type" ng-model="vm.orgDemoBasic.orgType">
+					<option ng-repeat="p in vm.orgTypes">{{ p }}</option>
 				</select>
 		</span>
 	</div>
@@ -34,7 +33,7 @@
 	<div class="col-md-6">
 		<span class="span-org-name">
 			<label for="org-name">Organization Name*</label>
-			<input type="text" id="org-name" name="org-name" />
+			<input type="text" id="org-name" name="org-name" ng-model="vm.orgDemoBasic.orgName"/>
 		</span>
 	</div>
 

@@ -3,14 +3,14 @@
 		<div class="col-md-10">
 			<span>
 				<label for="addr-type">Address Type*</label>
-				<select id="addr-type" name="addr-type">
-					<option value="organization"></option>
+				<select id="addr-type" name="addr-type" ng-model="vm.address.addrType">
+					<option ng-repeat="p in vm.addrTypes">{{ p }}</option>
 				</select>
 			</span>
 		</div>
 		<div class="col-md-2 remove">
 			<div class="btn-div">
-				<a href="#"><em>X Remove</em></a>
+				<a ng-click="vm.deleteAddr(vm.address)"><em>X Remove</em></a>
 			</div>
 		</div>
 	</div>
@@ -19,7 +19,7 @@
 		<div class="col-md-6">
 			<span class="span-attention">
 				<label for="attention">Attention</label>
-				<input type="text" id="attention" name="attention" />
+				<input type="text" id="attention" name="attention" ng-model="vm.address.attention"/>
 			</span>
 		</div>
 	</div>

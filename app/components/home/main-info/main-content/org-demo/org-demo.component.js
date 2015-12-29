@@ -8,16 +8,22 @@ export const orgDemoDirective = () => {
 		controllerAs: 'vm',
 		bindToController: true,
     scope: {
-    	orgDemo: '='
+    	orgDemo: '=',
+    	addresses: '=',
+    	id: "@"
     }
 	};
 };
 
+export const orgDemo = {
+	addresses: []
+};
+
 class OrgDemoComponent {
 	constructor() {
-		this.orgDemo = {
-			
-		}
+
+		this.addresses = [];
+
 	}
 }
 

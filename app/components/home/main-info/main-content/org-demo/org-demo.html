@@ -1,5 +1,8 @@
 <div class="org-demo">
 	<org-demo-basic></org-demo-basic>
-	<org-demo-addr></org-demo-addr>
-	<org-demo-add-addr></org-demo-add-addr>
+	<org-demo-addr ng-repeat="address in vm.addresses"
+	               id="{{address.id}}"
+								 addresses="vm.addresses">
+	</org-demo-addr>
+	<org-demo-add-addr addresses="vm.addresses"></org-demo-add-addr>
 </div>

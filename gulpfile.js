@@ -35,7 +35,7 @@ var uglify = require('gulp-uglify');
 var useref = require('gulp-useref');
 var watchify = require('watchify');
 var zip = require('gulp-zip');
-var gls = require('gulp-live-server');
+var server = require('gulp-live-server');
 
 
 // Helpers:
@@ -59,9 +59,9 @@ function bundleScripts(devMode) {
       .pipe(buffer())
       .pipe(gulpif(!devMode, rev()))
       .pipe(sourcemaps.init({loadMaps: true}))
-//        .pipe(uglify())
-//        .on('error', gutil.log)
-//        .pipe(ngAnnotate({single_quotes: true}))
+      .pipe(uglify())
+      .on('error', gutil.log)
+      .pipe(ngAnnotate({single_quotes: true}))
       .pipe(sourcemaps.write('./'))
       .pipe(gulp.dest('./dist/js/app'))
       .pipe(gulpif(devMode, browserSync.stream({once: true})))
@@ -78,8 +78,8 @@ function bundleScripts(devMode) {
 
 // Backend mockup server
 gulp.task('server', function() {
-  var server = gls.new('server.js', undefined, false);
-  server.start();
+  var live = new server('server.js');
+  live.start();
 });
 
 gulp.task('build-dependencies', function () {
@@ -88,9 +88,9 @@ gulp.task('build-dependencies', function () {
     debug: true
   });
 
-  // b.require('angular');
-  // b.require('angular-ui-router');
-  b.require('angular2/bundles/angular2');
+  b.require('angular');
+  b.require('angular-ui-router');
+  // b.require('angular2');
   b.require('lodash');
 
   return b.bundle()
